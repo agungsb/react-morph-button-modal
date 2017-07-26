@@ -4,6 +4,5 @@ This project is a react component of an awesome morphing buttons concept provide
 
 Please note that this repo hasn't implemented all of the buttons provided on the source. Any help would be appreciated.
 
-[Article on Codrops](http://tympanus.net/codrops/?p=19004)
-
-[Demo](http://tympanus.net/Development/ButtonComponentMorph/)
+![](https://github.com/agungsb/react-morph-button-modal/blob/master/react-morph-button-modal-demo-desktop.gif)
+![](https://github.com/agungsb/react-morph-button-modal/blob/master/react-morph-button-modal-demo-mobile.gif)
