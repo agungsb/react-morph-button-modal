@@ -48,8 +48,10 @@ export default class MorphButtonModal extends Component {
     const { children, id, label } = this.props;
     const { buttonPos, openDialog } = this.state;
     let easing = styles.morphButtonModal1;
+    let contentStyleForm = styles.contentStyleForm1;
     if (id === 2) {
       easing = styles.morphButtonModal2;
+      contentStyleForm = styles.contentStyleForm2;
     } else if (id === 3) {
       easing = styles.morphButtonModal3;
     } else if (id === 4) {
@@ -63,7 +65,7 @@ export default class MorphButtonModal extends Component {
           type="button" ref={ref => this._button = ref}>{label}</button>
         <div className={styles.morphContent} style={inlineStyles}>
           <div>
-            <div className={`${styles.contentStyleForm} ${styles.contentStyleForm2}`}>
+            <div className={`${styles.contentStyleForm} ${contentStyleForm}`}>
               <span className={`${styles.icon} ${styles.iconClose}`} onClick={this.close}>Close the dialog</span>
               <h2>{label}</h2>
               {children}

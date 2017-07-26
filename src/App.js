@@ -14,7 +14,7 @@ class App extends Component {
         <p className={styles.AppIntro}>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <div className={styles.AppIntro}>
+        <div className={styles.AppMain}>
           <MorphButtonModal id={2} label="Login">
             <form onSubmit={event => event.preventDefault()}>
               <p><label>Email</label><input type="text" /></p>
@@ -22,8 +22,8 @@ class App extends Component {
               <button className={styles.AppButton}>Submit</button>
             </form>
           </MorphButtonModal>
-          <h2> Or </h2>
-          <MorphButtonModal id={1} label="Sign Up">
+          <h2>Or</h2>
+          <MorphButtonModal id={3} label="Sign Up">
             <form onSubmit={event => event.preventDefault()}>
               <p><label>Email</label><input type="text" /></p>
               <p><label>Password</label><input type="password" /></p>
