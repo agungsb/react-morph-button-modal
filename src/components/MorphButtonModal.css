@@ -1,0 +1,1040 @@
+
+/* Morph Button: Default Styles */
+
+.morphButton {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+}
+
+.morphButton > button {
+	position: relative;
+	padding: 0 1em;
+	border: none;
+	background-color: #ff5252;
+	color: #f9f6e5;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	line-height: 80px;
+	overflow: hidden;
+}
+
+.morphButton.open > button {
+	pointer-events: none;
+}
+
+.morphContent {
+	pointer-events: none;
+}
+
+.morphButton.open .morphContent {
+	pointer-events: auto;
+}
+
+/* Common styles for overlay and modal type (fixed morph) */
+.morphButtonFixed,
+.morphButtonFixed .morphContent {
+	width: 300px;
+	height: 80px;
+}
+
+.morphButtonFixed > button {
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: opacity 0.1s 0.5s;
+	transition: opacity 0.1s 0.5s;
+}
+
+.morphButtonFixed.open > button {
+	opacity: 0;
+	-webkit-transition: opacity 0.1s;
+	transition: opacity 0.1s;
+}
+
+.morphButtonFixed .morphContent {
+	position: fixed;
+	z-index: 900;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+}
+
+.morphButtonFixed.open .morphContent {
+	opacity: 1;
+}
+
+.morphButtonFixed .morphContent > div {
+	visibility: hidden;
+	height: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+	transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+}
+
+.morphButtonFixed.open .morphContent > div {
+	visibility: visible;
+	height: auto;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s 0.5s;
+	transition: opacity 0.3s 0.5s;
+}
+
+.morphButtonFixed.active > button {
+	z-index: 2000;
+}
+
+.morphButtonFixed.active .morphContent {
+	z-index: 1900;
+}
+
+/* Transitions for overlay button and sidebar button */
+.morphButtonOverlay .morphContent,
+.morphButtonSidebar .morphContent {
+	-webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+	transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+}
+
+.morphButtonOverlay.open .morphContent,
+.morphButtonSidebar.open .morphContent {
+	-webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+	transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;	
+}
+
+/* Morph Button Style: Overlay */
+.morphButton.morphButtonOverlay {
+	margin: 50px auto;
+}
+
+.morphButtonOverlay .morphContent {
+	overflow: hidden;
+	background: #e85657;
+}
+
+.morphButtonOverlay.open .morphContent {
+	top: 0 !important;
+	left: 0 !important;
+	width: 100%;
+	height: 100%;
+}
+
+/* Morph Button Style: Modal */
+.morphButtonModal::before {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 800;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+	pointer-events: none;
+}
+
+.morphButtonModal.open::before {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.morphButtonModal.active::before {
+	z-index: 1800;
+}
+
+.morphButtonModal .morphContent {
+	overflow: hidden;
+	-webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+}
+
+.morphButtonModal.open .morphContent {
+	top: 50% !important;
+	left: 50% !important;
+	margin: -210px 0 0 -300px;
+	width: 600px;
+	height: 420px;
+	-webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+}
+
+/* Colors and sizes for individual modals */
+.morphButton.morphButtonModal1 {
+  display: inline-block
+}
+
+.morphButton.morphButtonModal2,
+.morphButton.morphButtonModal3 {
+	margin: 0 auto;
+	display: inline-block;
+	margin: 10px 15px;
+}
+
+.morphButtonModal1 > button,
+.morphButtonModal1 .morphContent {
+	background-color: #553445;
+}
+
+.morphButtonModal2 > button,
+.morphButtonModal2 .morphContent,
+.morphButtonModal3 > button,
+.morphButtonModal3 .morphContent {
+	background-color: #fef0e3;
+	color: #e75854;
+}
+
+.morphButtonModal4 {
+	display: inline-block;
+}
+
+.morphButtonModal4 > button,
+.morphButtonModal4 .morphContent {
+	background-color: #faf1e0;
+	color: #553445;
+}
+
+.morphButtonModal4 > button span,
+.morphButtonModal4 .morphClone {
+	padding-left: 10px;
+	color: #286f81;
+}
+
+.morphButtonModal4 .morphClone {
+	position: absolute;
+	right: 34px;
+	bottom: 30px;
+	z-index: 100;
+	letter-spacing: 1px;
+	font-weight: 700;
+	-webkit-transition: bottom 0.4s 0.1s, right 0.4s 0.1s;
+	transition: bottom 0.4s 0.1s, right 0.4s 0.1s;
+}
+
+.morphButtonModal4.open .morphClone,
+.noJs .morphButtonModal4 .morphClone {
+	right: 10px;
+	bottom: 10px;
+}
+
+.morphButtonModal1::before {
+	background: rgba(240,221,204,0.7);
+}
+
+.morphButtonModal2.open .morphContent {
+	margin: -210px 0 0 -170px;
+	width: 340px;
+	height: 420px;
+}
+
+.morphButtonModal3.open .morphContent {
+	margin: -255px 0 0 -210px;
+	width: 420px;
+	height: 510px;
+}
+
+.morphButtonModal3.open .morphContent > div {
+	height: 420px;
+}
+
+.morphButtonModal2.open .morphContent > div,
+.morphButtonModal3.open .morphContent > div {
+ 	-webkit-transition: opacity 0.3s 0.3s;
+	transition: opacity 0.3s 0.3s;
+}
+
+.morphButtonModal4.open .morphContent {
+	margin: -200px 0 0 -320px;
+	width: 640px;
+	height: 400px;
+}
+
+/* Morph Button Style: In the content flow */
+.morphButtonInflow {
+	overflow: hidden;
+	max-width: 100%;
+	height: 70px;
+}
+
+.morphButtonInflow > button {
+	width: 100%;
+	line-height: 70px;
+}
+
+.morphButtonInflow .morphContent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.morphButtonInflow .morphContent .morphClone {
+	padding: 0;
+	font-weight: 700;
+	font-size: 1.5em;
+	line-height: 70px;
+}
+
+/* Colors and sizes for individual in flow buttons */
+.morphButtonInflow1 {
+	width: 600px;
+	margin: 2em auto;
+	-webkit-transition: height 0.5s cubic-bezier(0.7,0,0.3,1);
+	transition: height 0.5s cubic-bezier(0.7,0,0.3,1);
+}
+
+.morphButtonInflow1 > button span {
+	visibility: hidden;
+}
+
+.morphButtonInflow1 .morphContent .morphClone {
+	color: #f9f6e5;
+	background: #e85657;
+}
+
+.morphButtonInflow2 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 220px;
+	background-color: #fef0e3;
+	-webkit-transition: height 0.3s, width 0.3s, -webkit-transform 0.3s;
+	transition: height 0.3s, width 0.3s, transform 0.3s;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.morphButtonInflow2 > button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	color: #e75854;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.morphButtonInflow2.open > button {
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+.morphButtonInflow2 .morphContent {
+	width: 260px;
+	height: 200px;
+}
+
+.morphButtonInflow2.open {
+	width: 260px;
+}
+
+/* Let's add some nice easing for all cases */
+.morphButton .morphContent,
+.morphButton.open .morphContent,
+.morphButtonModal4 .morphClone {
+	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+/* Helper classes */
+.noscroll {
+	overflow: hidden;
+}
+
+.morphButtonOverlay.scroll .morphContent {
+	overflow-y: scroll;
+}
+
+.morphButtonSidebar.scroll .morphContent {
+	overflow: auto;
+}
+
+/* No JS fallback: let's hide the button and show the content */
+.noJs .morphButton > button {
+	display: none;
+}
+
+.noJs .morphButton {
+	margin: 10px 0;
+	float: none;
+}
+
+.noJs .morphButton,
+.noJs .morphButton .morphContent,
+.noJs .morphButton .morphContent > div {
+	position: relative;
+	width: auto;
+	height: auto;
+	opacity: 1;
+	visibility: visible;
+	top: auto;
+	left: auto;
+	-webkit-transform: none;
+	transform: none;
+	pointer-events: auto;
+}
+
+.noJs .morphButton .morphContent .iconClose {
+	display: none;
+}
+
+.noJs .morphButtonSidebar {
+	width: 300px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	height: 100%;
+	background: #e85657;
+	overflow: auto;
+}
+
+.noTransition {
+	-webkit-transition: none !important;
+	transition: none !important;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 600px) {
+	.morphButtonModal.open .morphContent {
+		top: 0% !important;
+		left: 0% !important;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		overflow-y: scroll;
+		-webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+		transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.morphButtonFixed,
+	.morphButtonFixed .morphContent {
+		width: 200px;
+		height: 80px;
+	}
+
+	.morphButtonFixed > button {
+		font-size: 75%;
+	}
+
+	.morphButtonSidebar > button {
+		font-size: 1.6em;
+	}
+
+	.morphButtonInflow .morphContent .morphClone {
+		font-size: 0.9em;
+	}
+
+	.morphButtonModal4,
+	.morphButtonModal4 .morphContent {
+		width: 220px;
+		height: 120px;
+	}
+
+	.morphButtonModal4 > button {
+		font-size: 100%;
+		line-height: 50px;
+	}
+
+	.morphButtonModal4 > button span {
+		display: block;
+	}
+
+	.morphButtonModal4 .morphClone {
+		right: 83px;
+		bottom: 26px;
+	}
+
+	.morphButtonSidebar,
+	.morphButtonSidebar .morphContent {
+		width: 100% !important;
+		height: 60px !important;
+	}
+
+	.morphButtonSidebar {
+		bottom: 0px;
+		left: 0px;
+	}
+
+	.morphButtonSidebar.open .morphContent {
+		height: 100% !important;
+	}
+}
+
+/* Styles for dummy content */
+
+/* Style for overlay */
+
+.contentStyleOverlay {
+	padding: 100px 50px;
+	text-align: center;
+}
+
+.contentStyleOverlay h2 {
+	margin: 0 0 1em 0;
+	padding: 0;
+	font-weight: 300;
+	font-size: 3em;
+}
+
+.contentStyleOverlay p {
+	margin: 0 auto;
+	padding: 10px 0;
+	max-width: 700px;
+	text-align: justify;
+	font-weight: 300;
+	font-size: 1.5em;
+}
+
+.contentStyleOverlay .iconClose {
+	border: 2px solid #f9e1c9;
+	border-radius: 50%;
+	line-height: 2.8;
+}
+
+.contentStyleOverlay .iconClose:hover {
+	border-color: #a50a05;	
+}
+
+/* Style for text modal */
+.contentStyleText {
+	padding: 60px;
+	text-align: left;
+}
+
+.contentStyleText h2 {
+	margin: 0 0 0.5em 0;
+	font-weight: 300;
+	font-size: 1.85em;
+}
+
+.contentStyleText p {
+	color: rgba(255,255,255,0.5);
+	font-weight: 300;
+	font-size: 1.15em;
+	line-height: 1.4;
+}
+
+.contentStyleText label {
+    padding: 10px;
+    color: #f9e1c9;
+    font-weight: bold;
+}
+
+.contentStyleText .iconClose {
+	top: 0;
+	right: 0;
+	color: rgba(0,0,0,0.2);
+}
+
+.contentStyleText .iconClose:hover {
+	color: #f9e1c9;
+}
+
+/* Style for form modal */
+.contentStyleForm {
+	position: relative;
+	text-align: left;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.contentStyleForm h2 {
+	margin: 0;
+	padding: 0.4em 0 0.3em;
+	text-align: center;
+	font-weight: 300;
+	font-size: 3.5em;
+}
+
+.contentStyleForm form {
+	padding: 10px 30px;
+}
+
+.contentStyleForm form p {
+	margin: 0 0 5px 0;
+	font-size: 0.7em;
+}
+
+.contentStyleForm label {
+	display: block;
+	padding: 10px 0 0;
+	color: #d5bba4;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+.contentStyleForm input[type="text"],
+.contentStyleForm input[type="password"] {
+	/* padding: 10px; */
+	width: 100%;
+	border: 2px solid #ebd3bd;
+	background: transparent;
+	color: #b09a86;
+	font-weight: 300;
+	font-size: 2.2em;
+}
+
+.contentStyleForm input[type="text"]:focus,
+.contentStyleForm input[type="password"]:focus {
+	border-color: #e75854;
+	color: #e75854;
+}
+
+.contentStyleForm input:focus {
+	outline: 0;
+}
+
+.contentStyleForm .iconClose {
+	top: 0;
+	right: 0;
+	color: #ebd3bd;
+	font-size: 75%;
+}
+
+.contentStyleForm .iconClose:hover {
+	color: #e75854;
+}
+
+.contentStyleForm1 h2,
+.contentStyleForm1 p,
+.contentStyleForm1 .iconClose {
+	opacity: 0;
+	-webkit-transition: opacity 0.2s 0.35s, -webkit-transform 0.2s 0.35s;
+	transition: opacity 0.2s 0.35s, transform 0.2s 0.35s;
+	-webkit-transform: scale(0.85);
+	transform: scale(0.85);
+}
+
+.contentStyleForm1 p:first-child {
+	-webkit-transition-delay: 0.4s;
+	transition-delay: 0.4s;
+}
+
+.contentStyleForm1 p:nth-child(2) {
+	-webkit-transition-delay: 0.45s;
+	transition-delay: 0.45s;
+}
+
+.contentStyleForm1 p:nth-child(3) {
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+
+.morphButton.open .contentStyleForm1 h2,
+.morphButton.open .contentStyleForm1 p,
+.morphButton.open .contentStyleForm1 .iconClose {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.contentStyleForm2 h2,
+.contentStyleForm2 p,
+.contentStyleForm2 .iconClose {
+	opacity: 0;
+	-webkit-transition: opacity 0.2s 0.3s, -webkit-transform 0.2s 0.3s;
+	transition: opacity 0.2s 0.3s, transform 0.2s 0.3s;
+	-webkit-transform: translateY(50px);
+	transform: translateY(50px);
+}
+
+.contentStyleForm2 p:first-child {
+	-webkit-transition-delay: 0.35s;
+	transition-delay: 0.35s;
+}
+
+.contentStyleForm2 p:nth-child(2) {
+	-webkit-transition-delay: 0.4s;
+	transition-delay: 0.4s;
+}
+
+.contentStyleForm2 p:nth-child(3) {
+	-webkit-transition-delay: 0.45s;
+	transition-delay: 0.45s;
+}
+
+.contentStyleForm2 p:nth-child(4) {
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+
+.morphButton.open .contentStyleForm2 h2,
+.morphButton.open .contentStyleForm2 p,
+.morphButton.open .contentStyleForm2 .iconClose {
+	opacity: 1;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.contentStyleForm4 form {
+	padding: 30px;
+	background: #fff;
+	color: #ccb096;
+	font-size: 1.5em;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+}
+
+.contentStyleForm4 input[type="text"] {
+	border: none;
+	background-color: #f0f0f0;
+}
+
+.contentStyleForm4 form button {
+	background: #ba997b;
+}
+
+.contentStyleForm4 form button:focus,
+.contentStyleForm4 form button:hover {
+	background: #a9896d;
+}
+.contentStyleForm4 p {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: rotateX(-45deg);
+	transform: rotateX(-45deg);
+	-webkit-transform-origin: center top;
+	transform-origin: center top;
+}
+
+.morphButton.open .contentStyleForm4 p {
+	opacity: 1;
+	-webkit-transition: opacity 0.4s 0.2s, -webkit-transform 0.4s 0.2s;
+	transition: opacity 0.4s 0.2s, transform 0.4s 0.2s;
+	-webkit-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+
+.morphButton.open .contentStyleForm4 p:nth-child(2) {
+	-webkit-transition-delay: 0.35s;
+	transition-delay: 0.35s;
+}
+
+.contentStyleSocial {
+	padding: 30px;
+	text-align: left;
+}
+
+.morphButtonInflow2 > button svg {
+	display: inline-block;
+	padding-right: 10px;
+	width: 20px;
+	height: 20px;
+	vertical-align: -5%;
+}
+
+.morphButtonInflow2 > button svg path {
+	fill: #e75854;
+}
+
+.contentStyleSocial a {
+	display: block;
+	padding: 0.5em 0;
+	color: #67c2d4;
+	vertical-align: middle;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	font-size: 0.8em;
+	line-height: 32px;
+}
+
+.js .contentStyleSocial a {
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+.contentStyleSocial a:hover {
+	color: #e75854;
+}
+
+.contentStyleSocial a:hover svg path {
+	fill: #e75854;
+}
+
+.contentStyleSocial a svg {
+	display: inline-block;
+	padding-right: 10px;
+	vertical-align: middle;
+	-webkit-backface-visibility: hidden;
+}
+
+.morphButtonInflow.open .contentStyleSocial a {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);	
+}
+
+.morphButtonInflow.open .contentStyleSocial a:nth-child(2) {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+.morphButtonInflow.open .contentStyleSocial a:nth-child(3) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+.contentStyleVideo {
+	text-align: left;
+}
+
+.videoMockup {
+	width: 640px;
+	height: 360px;
+	max-width: 100%;
+	background: url(./rated.png) no-repeat center center;
+	background-size: 100%;
+}
+
+.contentStyleVideo .iconClose,
+.contentStyleVideo .iconPause {
+	color: #286f81;
+}
+
+.contentStyleVideo .iconClose {
+	top: 0;
+	right: 0;
+}
+
+.contentStyleVideo .iconClose:hover {
+	color: rgba(0,0,0,0.4);
+}
+
+.controls {
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+.js .controls {
+	position: absolute;
+}
+
+.controls span {
+	display: inline-block;
+}
+
+.contentStyleVideo .iconPause {
+	overflow: hidden;
+	width: 2.5em;
+	height: 2.5em;
+	text-align: center;
+	line-height: 2.5;
+	cursor: pointer;
+	vertical-align: bottom;
+}
+
+.contentStyleVideo span.time {
+	color: #286f81;
+	letter-spacing: 1px;
+	font-weight: 700;
+	line-height: 40px;
+}
+
+.controls::after {
+	content: '';
+	position: absolute;
+	height: 7px;
+	left: 100px;
+	right: 70px;
+	bottom: 16px;
+	background: #aaa;
+}
+
+.contentStyleSidebar h2 {
+	font-weight: 300;
+	font-size: 2em;
+	padding: 0.75em 0 0.75em 1em;
+	margin: 0;
+	color: #bb4445;
+}
+
+.contentStyleSidebar .iconClose {
+	top: 0;
+	right: 0;
+	font-size: 0.85em;
+}
+
+.contentStyleSidebar ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.contentStyleSidebar ul li a {
+	display: block;
+	padding: 12px 20px;
+	color: #faf1e0;
+	font-weight: 400;
+	font-size: 1.05em;
+	box-shadow: inset 0 1px rgba(0,0,0,0.1);
+}
+
+.contentStyleSidebar ul li:last-child a {
+	box-shadow: inset 0 1px rgba(0,0,0,0.1), inset 0 -1px rgba(0,0,0,0.1);
+}
+
+.contentStyleSidebar ul li a:hover {
+	background: rgba(0,0,0,0.1);
+	box-shadow: none;
+}
+
+.contentStyleSidebar ul li a.active {
+	background: rgba(0,0,0,0.1);
+	box-shadow: none;
+}
+
+.contentStyleSidebar ul .icon::before {
+	display: inline-block;
+	width: auto;
+	margin-right: 20px;
+	font-size: 1.5em;
+	vertical-align: -10%;
+	color: rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 770px) {
+	.contentStyleOverlay {
+		font-size: 75%;
+	}
+
+	.contentStyleOverlay .iconClose {
+		top: 5px;
+		right: 5px;
+	}
+}
+
+/* Icons */
+.iconClose {
+	z-index: 100;
+	display: block;
+	overflow: hidden;
+	width: 3em;
+	height: 3em;
+	text-align: center;
+	line-height: 3;
+	cursor: pointer;
+}
+
+.icon:before {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-family: 'icomoon';
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.iconCamera:before {
+	content: "\e017";
+}
+
+.iconServer:before {
+	content: "\e022";
+}
+
+.iconHeart:before {
+	content: "\e024";
+}
+
+.iconZoomIn:before {
+	content: "\e037";
+}
+
+.iconMicrophone:before {
+	content: "\e048";
+}
+
+.iconCloud:before {
+	content: "\e066";
+}
+
+.iconUser:before {
+	content: "\e074";
+}
+
+.iconBriefcase:before {
+	content: "\e075";
+}
+
+.iconGlobe:before {
+	content: "\e078";
+}
+
+.iconCog::before {
+	content: "\e600";
+}
+
+.iconClose::before {
+	content: "\e601";
+}
+
+.iconPlay::before {
+	content: "\e602";
+}
+
+.iconPause::before {
+	content: "\e603";
+}
+
+.iconClose {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.iconClose:hover {
+	color: #a50a05;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Merriweather+Sans:800);
+
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('./../fonts/codropsicons/codropsicons.eot');
+	src:url('./../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('./../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('./../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('./../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+@font-face {
+	font-family: 'Blokk';
+	src: url('./../fonts/blokk/BLOKKRegular.eot');
+	src: url('./../fonts/blokk/BLOKKRegular.eot?#iefix') format('embedded-opentype'),
+		 url('./../fonts/blokk/BLOKKRegular.woff') format('woff'),
+		 url('./../fonts/blokk/BLOKKRegular.svg#BLOKKRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Icons */
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'icomoon';
+	src:url('./../fonts/icomoon/icomoon.eot?i64fx9');
+	src:url('./../fonts/icomoon/icomoon.eot?#iefixi64fx9') format('embedded-opentype'),
+		url('./../fonts/icomoon/icomoon.woff?i64fx9') format('woff'),
+		url('./../fonts/icomoon/icomoon.ttf?i64fx9') format('truetype'),
+		url('./../fonts/icomoon/icomoon.svg?i64fx9#icomoon') format('svg');
+}
